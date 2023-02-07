@@ -1,12 +1,13 @@
-package com.luv2code.ecommerce.dto;
+package com.verint.ecommerce.dto;
 
-import com.luv2code.ecommerce.entity.Address;
-import com.luv2code.ecommerce.entity.Customer;
-import com.luv2code.ecommerce.entity.Order;
-import com.luv2code.ecommerce.entity.OrderItem;
 import lombok.Data;
 
 import java.util.Set;
+
+import com.verint.ecommerce.entity.Address;
+import com.verint.ecommerce.entity.Customer;
+import com.verint.ecommerce.entity.Order;
+import com.verint.ecommerce.entity.OrderItem;
 
 @Data
 public class Purchase {

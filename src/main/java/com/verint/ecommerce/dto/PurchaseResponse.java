@@ -1,4 +1,6 @@
-package com.luv2code.ecommerce.dto;
+package com.verint.ecommerce.dto;
+
+
 
 import lombok.Data;
 
@@ -6,5 +8,5 @@ import lombok.Data;
 public class PurchaseResponse {
 
     private final String orderTrackingNumber;
-
+    private final String customer;
 }

@@ -1,12 +1,13 @@
-package com.luv2code.ecommerce.service;
+package com.verint.ecommerce.service;
 
-import com.luv2code.ecommerce.dao.CustomerRepository;
-import com.luv2code.ecommerce.dto.Purchase;
-import com.luv2code.ecommerce.dto.PurchaseResponse;
-import com.luv2code.ecommerce.entity.Customer;
-import com.luv2code.ecommerce.entity.Order;
-import com.luv2code.ecommerce.entity.OrderItem;
 import org.springframework.stereotype.Service;
+
+import com.verint.ecommerce.dao.CustomerRepository;
+import com.verint.ecommerce.dto.Purchase;
+import com.verint.ecommerce.dto.PurchaseResponse;
+import com.verint.ecommerce.entity.Customer;
+import com.verint.ecommerce.entity.Order;
+import com.verint.ecommerce.entity.OrderItem;
 
 import jakarta.transaction.Transactional;
 import java.util.Set;
@@ -48,14 +49,12 @@ public class CheckoutServiceImpl implements CheckoutService {
         customerRepository.save(customer);
 
         // return a response
-        return new PurchaseResponse(orderTrackingNumber);
+        return new PurchaseResponse(orderTrackingNumber,customer.getFirstName());
     }
 
     private String generateOrderTrackingNumber() {
 
-        // generate a random UUID number (UUID version-4)
-        // For details see: https://en.wikipedia.org/wiki/Universally_unique_identifier
-        //
+       
         return UUID.randomUUID().toString();
     }
 }

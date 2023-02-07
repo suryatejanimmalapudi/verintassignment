@@ -1,6 +1,9 @@
-package com.luv2code.ecommerce.entity;
+package com.verint.ecommerce.entity;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Setter;
+
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -33,6 +36,11 @@ public class Product {
 
     @Column(name = "unit_price")
     private BigDecimal unitPrice;
+    @Column(name = "discount")
+    private int discountpercentage;
+    @Column(name = "finalprice")
+    @Setter(value = AccessLevel.NONE)
+    private BigDecimal finalPrice;
 
     @Column(name = "image_url")
     private String imageUrl;
@@ -50,4 +58,9 @@ public class Product {
     @Column(name = "last_updated")
     @UpdateTimestamp
     private Date lastUpdated;
+
+    public void setFinalPrice(BigDecimal finalPrice) {
+        this.finalPrice = this.unitPrice.subtract(
+            (this.unitPrice.multiply(BigDecimal.valueOf(discountpercentage))).divide(BigDecimal.valueOf(100)));
+    }
 }

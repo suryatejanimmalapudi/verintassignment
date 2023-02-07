@@ -1,9 +1,10 @@
-package com.luv2code.ecommerce.controller;
+package com.verint.ecommerce.controller;
 
-import com.luv2code.ecommerce.dto.Purchase;
-import com.luv2code.ecommerce.dto.PurchaseResponse;
-import com.luv2code.ecommerce.service.CheckoutService;
 import org.springframework.web.bind.annotation.*;
+
+import com.verint.ecommerce.dto.Purchase;
+import com.verint.ecommerce.dto.PurchaseResponse;
+import com.verint.ecommerce.service.CheckoutService;
 
 @CrossOrigin("http://localhost:4200")
 @RestController
